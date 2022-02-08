@@ -1,0 +1,24 @@
+[
+  {
+    "name": "hylobatesapp",
+    "image": "709967413147.dkr.ecr.eu-central-1.amazonaws.com/hylobatesapp:latest",
+    "memoryReservation" : 256,
+    "portMappings": [
+      {
+        "hostPort": 0,
+        "protocol": "tcp",
+        "containerPort": 80
+      }
+    ],
+    "environment": [
+      {
+        "name": "PORT",
+        "value": "80"
+      },
+      {
+        "name" : "APP_NAME",
+        "value": "hylobatesapp"
+      }
+    ]
+  }
+]
