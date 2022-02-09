@@ -1,7 +1,3 @@
-provider "aws" {
-  region = var.region
-}
-
 data "aws_availability_zones" "zones_for_APP"{}
 
 data "aws_ami" "latest-ecs" {
@@ -20,10 +16,6 @@ data "aws_ami" "latest-ecs" {
   }
 }
 
-resource "aws_key_pair" "production" {
-  key_name   = "${var.ecs_cluster_name}_key_pair"
-  public_key = file(var.ssh_pubkey_file)
-}
 
 resource "aws_launch_configuration" "ecs-lc" {
   name                    = "ECS-Instance-${var.ecs_cluster_name}"

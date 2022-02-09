@@ -3,7 +3,7 @@ resource "aws_security_group" "ecs" {
   vpc_id = aws_vpc.Production_vpc.id
 
   /* dynamic "ingress" {
-    for_each = ["80", "443", "3001", "3002", "3000", "8080"]
+    for_each = ["80", "443", "8080"]
     content {
       from_port   = ingress.value
       to_port     = ingress.value

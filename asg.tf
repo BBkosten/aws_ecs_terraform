@@ -1,5 +1,4 @@
-
-resource "aws_autoscaling_group" "this" {
+resource "aws_autoscaling_group" "production-asg" {
   name                  = "${var.ecs_cluster_name}-ecs-autoscaling-group"
   max_size              = var.autoscale_max
   min_size              = var.autoscale_min
